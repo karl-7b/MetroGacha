@@ -1,3 +1,5 @@
+
+
 * {
     --bgc: #f0f0f0;
     --color: #0f0f0f;
@@ -55,7 +57,7 @@ body {
 
 .result-title {
     transition-duration: 0.3s;
-    font-size: 4rem;
+    font-size: 2rem;
     margin: 50px 0 50px 0;
     text-align: center;
     white-space: nowrap;
@@ -92,3 +94,18 @@ body {
 #inventory {
     margin-top: 50px;
 }
+
+@media (max-width: 767px) {
+  .title {
+    font-size: 3rem;
+  }
+
+  .result-title {
+    font-size: 3rem;
+  }
+
+  .capsule {
+    margin-top: 100px;
+  }
+}
+

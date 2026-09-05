@@ -100,7 +100,7 @@ function display(result) {
         
         $(".result-title").css("opacity", "1");
         $(".result-rarity").css("opacity", "1");
-        $(".result-title").css("font-size", "4rem");
+        $(".result-title").css("font-size", "3rem");
 
     })
     
@@ -118,6 +118,7 @@ function reset() {
         $('.capsule_upper').css("transform", "rotateZ(0deg)");
 
         $(".result-title").css("opacity", "0");
+        $(".result-title").css("font-size", "2rem");
         $(".result-rarity").css("opacity", "0");
 
         $("#gachabtn").css("transform", "translateX(0rem)");
