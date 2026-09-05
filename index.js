@@ -7,6 +7,9 @@ var station_5 = ["서울역", "김포공항", "용산", "왕십리"];
 let all_station_index = station_1.concat(station_2.concat(station_3.concat(station_4.concat(station_5))));
 var inventory = [];
 
+
+$("html, body").css({overflow:'hidden'}).bind('touchmove');
+
 function sleep(ms) {
   return new Promise((r) => setTimeout(r, ms));
 }

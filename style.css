@@ -12,6 +12,7 @@ body {
     display: block;
     text-align: center;
     overflow: hidden;
+    overflow-x:hidden;
 }
 
 .title {
