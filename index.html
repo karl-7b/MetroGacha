@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>지하철역 가챠</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1 class="title">지하철역 가챠</h1>
+
+    <button onclick="play();" ,="" class="btn" id="gachabtn">뽑기</button>
+    <br>
+    <button onclick="list();" ,="" class="btn" id="listbtn">뽑은 역 보기</button>
+    <div id="result">
+        <div class="capsule">
+            <img class="capsule_upper" src='./Icon/capsule_1.png' />
+            <br>
+            <img class="capsule_lower" src='./Icon/capsule_2.png' />
+        </div>
+        <h1 class="result-title"></h1>
+        <p class="result-rarity"></p>
+        <button onclick="reset()" id="rerollbtn" class="btn">이전</button>
+    </div>
+    <div id="inspection">
+        <div id="inventory"></div>
+        <button onclick="closelist()" class="btn">닫기</button>
+    </div>
+
+    <script type="text/javascript" src="index.js"></script>
+</body>
+</html>
