@@ -1,9 +1,19 @@
 
-var station_1 = ["남태령", "금호", "신이문", "문래"];
-var station_2 = ["동작", "건대입구", "신길", "약수"];
-var station_3 = ["잠실", "종로3가", "충무로", "동대문"];
-var station_4 = ["신도림", "시청", "사당", "청량리"];
-var station_5 = ["서울역", "김포공항", "용산", "왕십리"];
+var station_data = {
+        "station_1": ["남태령", "금호", "신이문", "문래", "산본", "방배", "월곡", "역촌"],
+        "station_2": ["동작", "건대입구", "신길", "약수", "동대문", "노량진", "노원", "신사", "성수"],
+        "station_3": ["잠실", "종로3가", "충무로", "동대문역사문화공원", "디지털미디어시티", "고속터미널", "영등포"],
+        "station_4": ["신도림", "시청", "사당", "대곡", "홍대입구", "인천", "공덕"],
+        "station_5": ["서울역", "김포공항", "용산", "왕십리", "수원", "청량리"]
+    }
+
+var station_1 = station_data["station_1"];
+var station_2 = station_data["station_2"];
+var station_3 = station_data["station_3"];
+var station_4 = station_data["station_4"];
+var station_5 = station_data["station_5"];
+
+
 let all_station_index = station_1.concat(station_2.concat(station_3.concat(station_4.concat(station_5))));
 var inventory = [];
 
@@ -94,15 +104,26 @@ function display(result) {
     }
     
     $(".result-rarity").text("◆".repeat(result[1]));
+    if (result[1] > 3) {
+        $(".result-rarity").css("color", "#e9d631")
+    }
+    
 
     sleep(500).then(() => {
-
+        
         
         $(".result-title").css("opacity", "1");
         $(".result-rarity").css("opacity", "1");
+        
         $(".result-title").css("font-size", "3rem");
 
-    })
+    });
+
+    sleep(1000).then(() => {
+        if (result[1] > 3) {
+            $(".result-rarity").css("filter", "drop-shadow(0 0 30px #e9d631")
+        }
+    });
     
 
     
@@ -120,9 +141,13 @@ function reset() {
         $(".result-title").css("opacity", "0");
         $(".result-title").css("font-size", "2rem");
         $(".result-rarity").css("opacity", "0");
+        $(".result-rarity").css("filter", "none");
+        $(".result-rarity").css("color", "#0f0f0f");
 
         $("#gachabtn").css("transform", "translateX(0rem)");
         $("#listbtn").css("transform", "translateX(0rem)");
+
+
 
 
         $("#result").css("opacity", "1");
@@ -147,9 +172,13 @@ function list() {
         }
     );
     for(let i=0; i<inventory.length; i++) {
-        $("#inventory").append(`<h1>${inventory[i][0]} ${"◆".repeat(inventory[i][1])}</h1>`)
-    }
+        if (inventory[i][1] > 3) {
+            $("#inventory").append(`<h1>${inventory[i][0]} <span class="gold">${"◆".repeat(inventory[i][1])}</span></h1>`)
+        } else {
+            $("#inventory").append(`<h1>${inventory[i][0]} ${"◆".repeat(inventory[i][1])}</h1>`)
     
+        }
+    }
 
 }
 

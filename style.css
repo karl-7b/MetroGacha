@@ -4,7 +4,7 @@
     --bgc: #f0f0f0;
     --color: #0f0f0f;
     --sub: #686868;
-    --rarity1: #e4e442;
+    --rarity1: #e9d631;
 }
 
 body {
@@ -66,12 +66,18 @@ body {
 
 .result-rarity {
     opacity: 0;
-    transition: font-size;
+    transition: font-size, filter;
     transition-duration: 0.3s;
     font-size: 3rem;
     margin: 50px 0 50px 0;
     text-align: center;
     white-space: nowrap;
+    filter: drop-shadow(0 0 0 0);
+}
+
+.gold {
+    color: var(--rarity1);
+    filter: drop-shadow(0 0 15px var(--rarity1));
 }
 
 .capsule {
