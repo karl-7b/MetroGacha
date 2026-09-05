@@ -59,9 +59,9 @@ function gacha() {
 
 function play() {
     $(".title").css('transition-duration', "1s");
-    $(".title").css('transform', "translateX(70vw)");
-    $("#gachabtn").css('transform', "translateX(-70vw)");
-    $("#listbtn").css('transform', "translateX(70vw)");
+    $(".title").css('transform', "translateX(80rem)");
+    $("#gachabtn").css('transform', "translateX(-80rem)");
+    $("#listbtn").css('transform', "translateX(80rem)");
 
     result = gacha();
     inventory.push(result);
@@ -114,14 +114,14 @@ function reset() {
     sleep(50).then(() => {
         
 
-        $(".title").css("transform", "translateX(0vw)");
+        $(".title").css("transform", "translateX(0rem)");
         $('.capsule_upper').css("transform", "rotateZ(0deg)");
 
         $(".result-title").css("opacity", "0");
         $(".result-rarity").css("opacity", "0");
 
-        $("#gachabtn").css("transform", "translateX(0vw)");
-        $("#listbtn").css("transform", "translateX(0vw)");
+        $("#gachabtn").css("transform", "translateX(0rem)");
+        $("#listbtn").css("transform", "translateX(0rem)");
 
 
         $("#result").css("opacity", "1");
